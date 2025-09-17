@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Gui</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon_io/site.webmanifest">
+
+    <!-- Meta Tags -->
+    <meta name="description" content="Portfólio de Gui Feitosa (Mavegui) - Engenheiro de Software | Desenvolvedor Backend">
+    <meta name="author" content="Gui Feitosa (Mavegui)">
+    <meta name="og:title" content="Portfólio Gui">
+    <meta name="og:description" content="Portfólio de Gui Feitosa (Mavegui) - Engenheiro de Software | Desenvolvedor Backend">
+    <meta name="og:image" content="./img/logo.png">
+    <meta name="og:type" content="website">
+    <meta name="og:url" content="#">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="bg-zinc-950">
+    
+    <header class="bg-zinc-950 shadow-md fixed w-full z-50">
+        <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4 relative">
+        
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-semibold text-white">Mavegui</span>
+                <img src="./img/logo.png" class="h-8" alt="GuiLogo" />
+            </a>
+        
+            <!-- Botão Mobile -->
+            <button id="hamburger" aria-expanded="false" aria-controls="navbar-dropdown"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm
+                rounded-lg md:hidden hover:bg-gray-700 focus:outline-none text-white">
+                
+                <span class="sr-only">Abrir menu</span>
+                <!-- Ícone Hamburger -->
+                <svg 
+                    id="hamburger-icon" 
+                    class="w-5 h-5" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 17 14"
+                >
+                    <path 
+                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" 
+                        stroke-width="2" d="M1 1h15M1 7h15M1 13h15"
+                    />
+                </svg>
+                
+                <!-- Ícone Fechar -->
+                <svg 
+                    id="close-icon" 
+                    class="hidden w-5 h-5" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+    
+            <!-- Menu -->
+            <nav 
+                id="navbar-dropdown"
+                class="hidden absolute top-full left-0 w-full bg-zinc-950 overflow-hidden
+                max-h-0 transition-all duration-300 ease-in-out md:static md:flex md:w-auto md:max-h-full">
+              
+                <ul class="flex flex-col md:flex-row md:space-x-8 font-medium p-4 md:p-0">
+                    <li>
+                        <a href="#sobre" class="block py-2 px-3 rounded md:hover:text-red-600 text-gray-200">
+                            Sobre mim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projetos" class="block py-2 px-3 rounded md:hover:text-red-600 text-gray-200">
+                            Portfólio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contato" class="block py-2 px-3 rounded md:hover:text-red-600 text-gray-200">
+                            Contato
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Seção Sobre mim -->
+        <section 
+            id="sobre" 
+            class="relative bg-fixed bg-center bg-cover min-h-screen flex items-center justify-center text-center p-6"
+            style="background-image: url('./img/img01.jpg');">
+          
+            <div class="absolute inset-0 bg-black/50"></div>
+        
+            <!-- Conteúdo -->
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg mb-6">
+                    Olá, Gui Feitosa (Mavegui) aqui!
+                </h1>
+                <p class="text-lg md:text-2xl text-gray-200 drop-shadow-md mb-8">
+                    Engenheiro de Software | Desenvolvedor Backend.
+                </p>
+        
+                <details class="mt-6">
+                    <summary 
+                        class="inline-block cursor-pointer bg-red-400 text-gray-950 font-semibold
+                        px-8 py-3 rounded-full shadow-lg hover:bg-red-600 hover:text-white transition"
+                    >
+                        Saiba mais sobre mim
+                    </summary>
+                    <div class="mt-4 text-gray-200 bg-zinc-800/80 p-4 rounded-lg shadow-md space-y-3 text-left">
+                        <p>
+                            Cursando Bacharelado em Engenharia de Software, com previsão de conclusão em 2026.
+                        </p>
+                    
+                        <p>
+                            Experiência em desenvolvimento de software com aplicação de boas práticas de desenvolvimento.
+                        </p>
+                    
+                        <p>
+                            Foco no Backend, principal linguagem Python, tenho conhecimento em outras linguagens também como PHP e Java.
+                        </p>
+                    
+                        <p>
+                            Estou em busca de oportunidades para aplicar meus conhecimentos e crescer profissionalmente.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </section>
+        
+        <!-- Seção Projetos -->
+        <section id="projetos" class="py-16">
+            <div class="container mx-auto md:px-8 lg:px-16">
+                <div class="text-center px-4">
+                    <h2 class="text-3xl text-white md:text-4xl font-bold mb-3">Meus Projetos</h2>
+                    <h5 class="text-lg text-gray-200 mb-12">
+                        Aqui é apenas os trabalhos mais recentes, acesse meu Github para ver todos os existentes.
+                    </h5>
+                </div>
+            
+                <!-- Grid de Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+                    <!-- Card 1 -->
+                    <article 
+                        class="bg-zinc-900 shadow-lg overflow-hidden md:rounded-lg md:hover:scale-105
+                        transform transition duration-300 w-full"
+                    >
+                        <div class="w-full overflow-hidden">
+                            <img src="./img/API_Cotas.png" alt="Projeto 1" class="w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl text-white font-bold mb-2">Cotas de investimentos</h3>
+                            <p class="text-gray-200 mb-4">API DRF com Swagger UI/Redoc que realiza cálculo de cotas.</p>
+                            <a href="https://github.com/Mavegui/API-Investimentos_DRF" target="_blank"
+                                class="inline-block bg-red-400 text-gray-950 font-semibold px-4 py-2
+                                rounded-full hover:bg-red-600 hover:text-white"
+                            >
+                                Ver Projeto
+                            </a>
+                        </div>
+                    </article>
+            
+                    <!-- Card 2 -->
+                    <article 
+                        class="bg-zinc-900 shadow-lg overflow-hidden md:rounded-lg md:hover:scale-105 transform
+                        transition duration-300 w-full"
+                    >
+                        <div class="w-full overflow-hidden">
+                            <img src="./img/Despesas_API.png" alt="Projeto 2" class="w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl text-white font-bold mb-2">API gerenciamento de despesas</h3>
+                            <p class="text-gray-200 mb-4">
+                                API RESTful para gerenciamento de despesas com base na renda mensal.
+                            </p>
+                            <a href="https://github.com/Mavegui/Despesas_API" target="_blank"
+                                class="inline-block bg-red-400 text-gray-950 font-semibold px-4 py-2
+                                rounded-full hover:bg-red-600 hover:text-white"
+                            >
+                                Ver Projeto
+                            </a>
+                        </div>
+                    </article>
+            
+                    <!-- Card 3 -->
+                    <article 
+                        class="bg-zinc-900 shadow-lg overflow-hidden md:rounded-lg md:hover:scale-105 transform
+                        transition duration-300 w-full"
+                    >
+                        <div class="w-full overflow-hidden">
+                            <img src="./img/blog.png" alt="Projeto 3" class="w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl text-white font-bold mb-2">Blog</h3>
+                            <p class="text-gray-200 mb-4">
+                                Blog de cadastro e gerenciamento de postagens usando Django.
+                            </p>
+                            <a href="https://github.com/Mavegui/Blog" target="_blank"
+                                class="inline-block bg-red-400 text-gray-950 font-semibold px-4 py-2
+                                rounded-full hover:bg-red-600 hover:text-white"
+                            >
+                                Ver Projeto
+                            </a>
+                        </div>
+                    </article>
+            
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção contato -->
+        <section id="contato" class="py-16 bg-zinc-900 text-center">
+            <h2 class="text-3xl text-white md:text-4xl font-bold mb-8">Contatos</h2>
+          
+            <div class="flex justify-center space-x-8">
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/gui77feitosa/" target="_blank" 
+                    class="flex items-center justify-center w-14 h-14 rounded-full bg-red-400 text-gray-950 
+                        hover:bg-red-600 hover:text-white transform hover:scale-110 transition duration-300 shadow-lg"
+                    aria-label="LinkedIn link"
+                >    
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.7v2.2h.1c.7-1.3 2.4-2.6 4.9-2.6C21.4 7.6 24 10.1 24 15v9h-5v-8.2c0-2-.7-3.3-2.5-3.3-1.4 0-2.2.9-2.6 1.8-.1.3-.1.7-.1 1.1V24h-5s.1-14.9 0-16z"/>
+                    </svg>
+                </a>
+          
+                <!-- GitHub -->
+                <a href="https://github.com/Mavegui" target="_blank" 
+                    class="flex items-center justify-center w-14 h-14 rounded-full bg-red-400 text-gray-950 
+                        hover:bg-red-600 hover:text-white transform hover:scale-110 transition duration-300 shadow-lg"
+                    aria-label="GitHub link"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.438 9.787 8.205 11.387.6.113.82-.262.82-.582 0-.287-.012-1.243-.018-2.256-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.082-.73.082-.73 1.205.087 1.84 1.237 1.84 1.237 1.07 1.835 2.805 1.305 3.49.997.107-.774.418-1.305.762-1.605-2.665-.305-5.466-1.335-5.466-5.933 0-1.31.468-2.382 1.236-3.222-.124-.303-.536-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 0 1 3-.404c1.02.005 2.05.138 3 .404 2.29-1.552 3.297-1.23 3.297-1.23.655 1.649.243 2.873.12 3.176.77.84 1.236 1.912 1.236 3.222 0 4.61-2.804 5.625-5.475 5.922.43.37.814 1.1.814 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.217.699.825.58C20.565 22.285 24 17.787 24 12.5 24 5.87 18.63.5 12 .5z"/>
+                    </svg>
+                </a>
+          
+                <!-- Gmail -->
+                <a href="mailto:gui77feitosa@gmail.com" target="_blank"
+                    class="flex items-center justify-center w-14 h-14 rounded-full bg-red-400 text-gray-950 
+                        hover:bg-red-600 hover:text-white transform hover:scale-110 transition duration-300 shadow-lg"
+                    aria-label="Gmail mailto link"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12.713l11.985-9.713H0L12 12.713zm0 2.574L0 5.999V18c0 1.104.896 2 2 2h20c1.104 0 2-.896 2-2V5.999L12 15.287z"/>
+                    </svg>
+                </a>
+        
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@guifeitosa7777" target="_blank"
+                    class="flex items-center justify-center w-14 h-14 rounded-full bg-red-400 text-gray-950 
+                        hover:bg-red-600 hover:text-white transform hover:scale-110 transition duration-300 shadow-lg"
+                    aria-label="YouTube link"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.5 6.2s-.2-1.7-.9-2.5c-.8-.9-1.7-.9-2.1-1C17.9 2.3 12 2.3 12 2.3h-.1s-5.9 0-8.5.4c-.4.1-1.3.1-2.1 1-.7.8-.9 2.5-.9 2.5S0 8.1 0 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.7.9 2.5c.8.9 1.8.9 2.3 1 1.7.2 7.3.4 8.6.4s8.6 0 10.3-.4c.4-.1 1.3-.1 2.1-1 .7-.8.9-2.5.9-2.5s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.5 14.6V7.9l6.4 3.3-6.4 3.4z"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="w-full bg-zinc-950 text-center py-4 mt-6">
+      <p class="text-gray-300 text-sm">
+        © 2025 - Criado por <span class="text-white font-semibold">Gui Feitosa (Mavegui)</span>
+      </p>
+    </footer>
+
+    <script src="./js/scripts.js"></script>
+
+</body>
+</html>
