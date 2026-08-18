@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets';
+import profileImg from '../assets/pito.png';
+
+import GridPattern from './GridPattern.astro';
+
+const techStack = ['Python', 'Django', 'PHP', 'Tailwind CSS', 'React', 'JavaScript'];
+---
+
+<section id="inicio" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden font-mono border-b-2 border-zinc-800">
+  <GridPattern />
+
+  <div class="max-w-screen-xl mx-auto px-4 relative z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+
+      <div class="flex-1 text-center md:text-left space-y-6">
+
+        <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-none bg-zinc-950 border border-zinc-800 text-xs font-medium text-gray-300">
+          <span class="w-2 h-2 rounded-none bg-emerald-500 animate-pulse"></span>
+          <span>Disponível para novos projetos</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          Olá, <span class="text-red-500">Gui Feitosa</span> aqui!
+        </h1>
+
+        <p class="text-lg sm:text-xl text-gray-400 max-w-2xl font-sans leading-relaxed">
+          Engenheiro de Software & Full Stack apaixonado por criar interfaces modernas, rápidas e experiências digitais focadas em performance e código limpo.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+          <a
+            href="#projetos"
+            class="w-full sm:w-auto px-6 py-3 text-sm font-semibold text-white bg-red-600 hover:bg-red-500 active:bg-red-700 border-2 border-red-600 hover:border-red-500 rounded-none transition-colors duration-200 text-center outline-none focus-visible:ring-2 focus-visible:ring-red-400 uppercase tracking-wider"
+          >
+            Ver Meus Projetos
+          </a>
+
+          <a
+            href="#contato"
+            class="w-full sm:w-auto px-6 py-3 text-sm font-semibold text-gray-300 hover:text-white bg-zinc-950 hover:bg-zinc-800 border-2 border-zinc-800 hover:border-zinc-700 rounded-none transition-colors duration-200 text-center outline-none focus-visible:ring-2 focus-visible:ring-red-400 uppercase tracking-wider"
+          >
+            Entrar em Contato
+          </a>
+        </div>
+
+        <div class="pt-6 border-t border-zinc-900 flex flex-wrap items-center justify-center md:justify-start gap-2">
+          <span class="text-xs text-gray-500 mr-2 uppercase tracking-wider">Principais Tecnologias:</span>
+          {techStack.map((tech) => (
+            <span class="px-2.5 py-1 text-xs font-medium bg-zinc-950 text-zinc-400 rounded-none border border-zinc-800">
+              {tech}
+            </span>
+          ))}
+        </div>
+
+      </div>
+
+      <div class="relative shrink-0 group my-4">
+
+        <div class="w-56 h-56 sm:w-64 sm:h-64 bg-red-600 absolute top-3 left-3 rounded-none group-hover:top-4 group-hover:left-4 transition-all duration-200 ease-out border-2 border-red-500"></div>
+
+        <div class="w-56 h-56 sm:w-64 sm:h-64 bg-zinc-950 border-2 border-zinc-800 relative z-10 rounded-none group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform duration-200 ease-out overflow-hidden">
+
+          {profileImg ? (
+            <Image
+              src={profileImg}
+              alt="Foto de perfil de Guilherme Feitosa"
+              width={300}
+              height={300}
+              class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300 relative z-0"
+              loading="eager"
+            />
+          ) : (
+            <div class="w-full h-full flex items-center justify-center bg-zinc-950">
+              <span class="text-5xl font-extrabold text-zinc-700">GUI</span>
+            </div>
+          )}
+
+          <div class="absolute bottom-0 right-0 bg-red-600 text-white text-[10px] font-bold px-2 py-1 font-mono uppercase tracking-widest z-20">
+            DEV.GUI_
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

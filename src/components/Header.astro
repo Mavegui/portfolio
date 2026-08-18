@@ -1,0 +1,153 @@
+---
+/* src/components/Header.astro */
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { name: 'Sobre mim', href: '#sobre' },
+  { name: 'Projetos', href: '#projetos' },
+  { name: 'Habilidades', href: '#habilidades' },
+];
+
+const baseUrl = import.meta.env.BASE_URL ?? '/';
+---
+
+<header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b-2 border-zinc-800 font-mono transition-all duration-200">
+  <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-3.5">
+
+    <a
+      href={baseUrl}
+      aria-label="Página inicial - Mavegui"
+      class="relative group inline-block font-mono"
+    >
+      <div class="bg-red-600 absolute inset-0 translate-x-1 translate-y-1 group-hover:translate-x-1.5 group-hover:translate-y-1.5 transition-transform duration-200 ease-out border border-red-500 rounded-none"></div>
+
+      <div class="relative z-10 bg-zinc-950 border-2 border-zinc-700 px-3 py-1 flex items-center gap-2 rounded-none transition-transform duration-200 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-none bg-red-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-none h-2 w-2 bg-red-500"></span>
+        </span>
+
+        <span class="text-sm sm:text-base font-extrabold tracking-wider text-zinc-100 uppercase">
+          MAVEGUI<span class="text-red-500">_</span>
+        </span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center space-x-1" aria-label="Navegação Principal">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-gray-300 hover:text-white hover:bg-zinc-900 border border-transparent hover:border-zinc-800 rounded-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-red-400 outline-none"
+        >
+          {item.name}
+        </a>
+      ))}
+
+      <a
+        href="#contato"
+        class="relative group inline-block font-mono ml-3"
+      >
+        <div class="bg-red-600 absolute inset-0 translate-x-1 translate-y-1 group-hover:translate-x-1.5 group-hover:translate-y-1.5 transition-transform duration-200 ease-out border border-red-500 rounded-none"></div>
+        <div class="relative z-10 bg-zinc-950 border-2 border-zinc-700 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white rounded-none transition-transform duration-200 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
+          Fale Comigo
+        </div>
+      </a>
+    </nav>
+
+    <button
+      id="mobile-menu-toggle"
+      type="button"
+      class="inline-flex items-center justify-center p-2 text-gray-400 hover:text-white hover:bg-zinc-900 border border-zinc-800 rounded-none md:hidden focus:outline-none focus:ring-2 focus:ring-red-400 transition-colors"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Abrir menu principal"
+    >
+      <svg id="hamburger-icon" class="w-6 h-6 block" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t-2 border-zinc-800 bg-zinc-950/95 backdrop-blur-lg font-mono">
+    <nav class="flex flex-col px-4 pt-3 pb-6 space-y-2" aria-label="Navegação Mobile">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="mobile-nav-link px-3 py-2.5 text-xs font-bold uppercase tracking-wider text-gray-200 hover:text-white hover:bg-zinc-900 border border-zinc-800/60 rounded-none transition-colors"
+        >
+          {item.name}
+        </a>
+      ))}
+
+      <a
+        href="#contato"
+        class="mobile-nav-link relative group inline-block font-mono mt-3 w-full text-center"
+      >
+        <div class="bg-red-600 absolute inset-0 translate-x-1 translate-y-1 border border-red-500 rounded-none"></div>
+        <div class="relative z-10 bg-zinc-950 border-2 border-zinc-700 py-2 text-xs font-bold uppercase tracking-wider text-white rounded-none">
+          Fale Comigo
+        </div>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function setupMobileMenu() {
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger-icon');
+    const close = document.getElementById('close-icon');
+
+    if (!toggleBtn || !menu || !hamburger || !close) return;
+
+    const closeMenu = () => {
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      menu.classList.add('hidden');
+      hamburger.classList.remove('hidden');
+      close.classList.add('hidden');
+    };
+
+    const toggleMenu = () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        closeMenu();
+      } else {
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        menu.classList.remove('hidden');
+        hamburger.classList.add('hidden');
+        close.classList.remove('hidden');
+      }
+    };
+
+    // 1. Clique no Botão Hambúrguer
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    // 2. Clique Fora do Menu
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (!menu.classList.contains('hidden') && !menu.contains(target) && !toggleBtn.contains(target)) {
+        closeMenu();
+      }
+    });
+
+    // 3. Clique em um link do próprio menu mobile
+    const navLinks = menu.querySelectorAll('.mobile-nav-link');
+    navLinks.forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+
+  // Suporte a Astro View Transitions
+  document.addEventListener('astro:page-load', setupMobileMenu);
+  setupMobileMenu();
+</script>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Fundo escuro do favicon (zinc-950) -->
+  <rect width="512" height="512" fill="#09090b" />
+
+  <!-- Camada traseira deslocada (Sombra Vermelha Brutalista) -->
+  <rect x="96" y="96" width="350" height="350" fill="#dc2626" stroke="#ef4444" stroke-width="6" />
+
+  <!-- Container principal estilo Badge MAVEGUI_ -->
+  <rect x="66" y="66" width="350" height="350" fill="#09090b" stroke="#3f3f46" stroke-width="12" />
+
+  <!-- Monograma 'M_' com tipografia técnica -->
+  <g transform="translate(115, 115)">
+    <!-- Letra M em bloco geométrico -->
+    <path d="M 0 250 L 0 0 L 55 0 L 126 140 L 197 0 L 252 0 L 252 250 L 194 250 L 194 88 L 138 196 L 114 196 L 58 88 L 58 250 Z" fill="#f4f4f5" />
+    
+    <!-- Cursor underline vermelho '_' de MAVEGUI_ -->
+    <rect x="260" y="200" width="40" height="50" fill="#ef4444" />
+  </g>
+</svg>
